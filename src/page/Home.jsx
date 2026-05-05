@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container } from '../Common/Container'
+import { Banner } from '../components/Home/Banner'
 
 export const Home = () => {
   return (
     <>
-      <Container> 
-        <h3>Home</h3>
-      </Container>
+    <div className=' bg-gray-50'>
+
+     <Banner />
     
+    </div>
     
     </>
   )
