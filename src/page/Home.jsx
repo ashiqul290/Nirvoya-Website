@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container } from '../Common/Container'
 import { Banner } from '../components/Home/Banner'
+import { Category } from '../components/Home/Category'
 
 export const Home = () => {
   return (
@@ -8,6 +9,7 @@ export const Home = () => {
     <div className=' bg-gray-50'>
 
      <Banner />
+     <Category />
     
     </div>
     
