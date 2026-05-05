@@ -88,7 +88,7 @@ export const FeaturedProduct = () => {
           <div className="">
             <div className="flex justify-between items-center mb-5">
               <h3 className=" text-[26px] font-poppins font-medium text-[#383838]">
-                Flash Deals
+                Featured Product
               </h3>
               <button className=" flex items-center gap-2 text-[16px] font-medium text-[#757575] font-poppins cursor-pointer">
                 View more <FaArrowRight />{" "}
