@@ -6,7 +6,8 @@ import productimg1 from "../assets/FeaturedProduct/image (1).png";
 import { ProductCart } from '../Common/ProductCart';
 
 export const ProdactFilterInCategory = () => {
-
+ const [minPrice, setMinPrice] = useState(1000);
+const maxPrice = 2500;
  
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
@@ -89,14 +90,48 @@ const handlePrevious = () => {
                    </div>
                    <hr className='mt-4.5 mb-5.5 text-gray-300'/>
                     <div className="pl-4.75 pr-3">
-                        <div className=" flex justify-between items-center">
-                            <h2 className=' font-medium font-poppins text-[18px] text-[#383838]'>Filter by Price</h2>
-                            <IoIosArrowDown />
-                        </div>
+            <div className="flex justify-between items-center">
+                <h2 className="font-medium font-poppins text-[18px] text-[#383838]">
+                    Filter by Price
+                </h2>
+            </div>
 
+         <div className="mt-5 relative">
+    {/* Background Track */}
+    <div className="w-full h-[4px] bg-gray-300 rounded-full"></div>
 
-                        <h3 className="text-[18px] font-medium font-poppins mt-6 text-[#383838]"><span className=' text-[#A7A7A7] '>Price:</span> ৳1000 - ৳2500 </h3>
-                    </div>
+    {/* Active Track */}
+    <div
+        className="absolute top-0 h-[4px] bg-[#0198E9] rounded-full"
+        style={{
+            width: `${(minPrice / maxPrice) * 100}%`,
+        }}
+    ></div>
+
+    {/* Slider */}
+    <input
+        type="range"
+        min="0"
+        max={maxPrice}
+        value={minPrice}
+        onChange={(e) => setMinPrice(Number(e.target.value))}
+        className="absolute top-[-6px] w-full appearance-none bg-transparent
+        [&::-webkit-slider-thumb]:appearance-none
+        [&::-webkit-slider-thumb]:h-4
+        [&::-webkit-slider-thumb]:w-4
+        [&::-webkit-slider-thumb]:rounded-full
+        [&::-webkit-slider-thumb]:bg-white
+        [&::-webkit-slider-thumb]:shadow-[0_0_5px]
+        [&::-webkit-slider-thumb]:shadow-black/50
+        [&::-webkit-slider-thumb]:cursor-pointer"
+    />
+</div>   
+
+            <h3 className="text-[18px]  font-medium font-poppins mt-6 text-[#383838]">
+                <span className="text-[#A7A7A7] ">Price:</span> ৳{minPrice} -
+                ৳{maxPrice}
+            </h3>
+        </div>
                      <hr className='mt-4.5 mb-5.5 text-gray-300'/>
                     <div className="pl-4.75 pr-3 mb-7">
                        <div className=" flex items-center justify-between">
