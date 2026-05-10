@@ -54,6 +54,9 @@ export const ProdactFilterInCategory = () => {
 const handleNext = () => {
     if (currentPage < totalPages) {
         setCurrentPage(currentPage + 1);
+         window.scrollTo({
+            top: 0,
+        });
 
     }
 };
@@ -63,7 +66,6 @@ const handlePrevious = () => {
         setCurrentPage(currentPage - 1);
          window.scrollTo({
             top: 0,
-            behavior: "smooth"
         });
     }
 };
@@ -117,7 +119,7 @@ const handlePrevious = () => {
                             <IoStar />
                         </div>
                         <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="4" />
+                            <input type="checkbox" className=' w-6 h-6' value="4"/>
                             <IoStar />
                             <IoStar />
                             <IoStar />
@@ -136,7 +138,15 @@ const handlePrevious = () => {
                 <div className="w-full  ">
                     <div className=" mt-5.5 flex items-center justify-between">
                         <h3 className=' text-[#424241]/50 font-medium text-[18px] font-poppins'>Showing  <span className='text-[#424241]'>20</span> of <span className='text-[#424241]'>160</span> product</h3>
-                        <h3 className=' text-[#424241]/50 font-medium text-[18px] font-poppins flex gap-2 items-center'>Sort by: <button className=' flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200'> Newest Items <IoIosArrowDown /></button></h3>
+                        <h3 className=' text-[#424241]/50 font-medium text-[18px] font-poppins flex gap-2 items-center'>Sort by: 
+                        {/* <button className=' flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200'> Newest Items <IoIosArrowDown /></button> */}
+                        <select name="" id="" className='flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200 outline-none'>
+                            <option value="Newest Items " >Newest Items </option>
+                            <option value="Newest Items " >2Newest Items </option>
+                            <option value="Newest Items " >3Newest Items </option>
+                            <option value="Newest Items " >4Newest Items </option>
+                        </select>
+                        </h3>
                     </div>
                       {/* Products */}
                 <div className="grid grid-cols-3 gap-6.5 mt-5.5">
@@ -160,7 +170,7 @@ const handlePrevious = () => {
     </button>
 
     {/* Page Numbers */}
-    <div className="flex gap-2">
+    <div className="flex ">
         {
             [...Array(totalPages)].map((_, index) => (
                 <button
