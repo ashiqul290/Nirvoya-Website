@@ -82,9 +82,9 @@ export const Header = () => {
 ];
   return (
     <>
-      <div className=" border-b border-gray-100">
+      <header className=" border-b sticky top-0 left-0 z-999 border-gray-100 bg-white">
         <Container>
-          <div className=" flex items-center justify-between my-8.25">
+          <div className=" flex items-center justify-between my-8.25 py-2">
             <div className="">
               <img src={logo} alt="Logo" />
             </div>
@@ -114,18 +114,44 @@ export const Header = () => {
             </div>
           </div>
           <div className="mb-2.5">
-            <ul className=" flex justify-between ">
+            <ul className=" flex justify-between relative ">
               {
-                categories.map((item)=>(
-
+                categories?.map((item)=>(
+                <>
                   <li className="text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#0970CD] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
-            after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full">{item.name}</li>
+            after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full group ">{item?.name}
+             <div className="">
+               { item?.subcategories && <div className=" hidden absolute top-full left-0 w-350  border border-gray-100 scale-z-110 bg-white px-17.75 pt-7.75 pb-6.5 group-hover:grid grid-cols-5 gap-15">
+                 {
+                  item?.subcategories?.map((item)=>(
+                    <>
+                  <div className="">
+                    
+                     <h2 className=' font-poppins text-[16px] text-[#3D3D3F] font-medium'>{item?.name}</h2>
+                    <ul >
+                      {
+                        item?.items?.map((item)=>(
+
+                          <li className="text-[#757575] hover:text-[#0970CD] duration-200 font-normal font-poppins text-[14px] mt-1">{item}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                 
+
+                    </> 
+                  ))
+                 }
+                </div>}
+             </div>
+            </li>
+              </>
                 ))
               }
             </ul>
           </div>
-        </Container>
-      </div>
-    </>
+          </Container>
+      </header>
+      </>
   );
 };

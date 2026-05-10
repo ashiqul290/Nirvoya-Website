@@ -15,7 +15,7 @@ export const ProductCart = ({item}) => {
           {
             item.discoutprice &&   <span className=' absolute top-0 left-0 px-3 py-2 text-[14px] font-semibold font-poppins bg-gradient-to-r from-[#FF7A00] to-[#FFB800] rounded-r rounded-b rounded-tl-[10px] text-white'>-{item?.discoutprice}% OFF</span>
           }
-            <span className=' absolute top-5.5 right-3.5 text-[23px]'><CiHeart /></span>
+            <span className=' absolute top-5.5 right-3.5 cursor-pointer text-[23px]'><CiHeart /></span>
         </div>
        <div className=" px-2">
          <div className="flex mt-3.5 items-center gap-0.5">
