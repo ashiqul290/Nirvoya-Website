@@ -7,13 +7,14 @@ import { FaCheck, FaCheckCircle, FaFacebookF, FaHeart, FaLink, FaLinkedin, FaTwi
 import img from '../assets/ProductView/Image Placeholder (4).png'
 import { IoStarSharp } from 'react-icons/io5'
 import { ProductDiscription } from '../components/ProductDetails/ProductDiscription'
+import { RetingAndReview } from '../components/ProductDetails/RetingAndReview'
 
 
 export const ProductDtails = () => {
   return (
     <>
         
-    <div className="">
+    <div className="bg-gray-50">
       <Container>
        <div className="">
        <RoutePath />
@@ -148,6 +149,9 @@ Sowdagar Trouser</h3>
 
       <div className="">
         <ProductDiscription />
+      </div>
+      <div className="mt-7.5 pb-12.5">
+        <RetingAndReview />
       </div>
        </div>
       </Container>
