@@ -4,17 +4,52 @@ import cart from "../assets/HeaderImg/Union.png";
 import productImg from "../assets/FlashDeals/Image Placeholder.png";
 import { CiHeart } from "react-icons/ci";
 import { Link, useNavigate } from "react-router";
+import { gsap } from "gsap";
+
 
 export const ProductCart = ({ item }) => {
   let navigete = useNavigate();
-  let handlebtn = () => {
-    alert("hi");
+  let handlebtn = (e) => {
+    flyAnimation(e.currentTarget, "#cart-icon");
   };
   let handleMain = () => {
     navigete("/view-product");
   };
-  let heandleWislist = () => {
-    alert("click to alert");
+  let heandleWislist = (e) => {
+      flyAnimation(e.currentTarget, "#wishlist-icon");
+  };
+
+
+    const flyAnimation = (startElement, targetSelector) => {
+    const target = document.querySelector(targetSelector);
+  
+    if (!target || !startElement) return;
+  
+    const clone = startElement.cloneNode(true);
+  
+    const startRect = startElement.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+  
+    clone.style.position = "fixed";
+    clone.style.left = `${startRect.left}px`;
+    clone.style.top = `${startRect.top}px`;
+    clone.style.width = `${startRect.width}px`;
+    clone.style.height = `${startRect.height}px`;
+    clone.style.zIndex = "9999";
+    clone.style.pointerEvents = "none";
+  
+    document.body.appendChild(clone);
+  
+    gsap.to(clone, {
+      x: targetRect.left - startRect.left,
+      y: targetRect.top - startRect.top,
+      scale: 0.3,
+      duration: 0.8,
+      ease: "power2.inOut",
+      onComplete: () => {
+        clone.remove();
+      },
+    });
   };
   return (
     <>

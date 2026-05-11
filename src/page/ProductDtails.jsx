@@ -8,9 +8,45 @@ import img from '../assets/ProductView/Image Placeholder (4).png'
 import { IoStarSharp } from 'react-icons/io5'
 import { ProductDiscription } from '../components/ProductDetails/ProductDiscription'
 import { RetingAndReview } from '../components/ProductDetails/RetingAndReview'
+import { gsap } from "gsap";
 
 
 export const ProductDtails = () => {
+  
+      const flyAnimation = (startElement, targetSelector) => {
+      const target = document.querySelector(targetSelector);
+    
+      if (!target || !startElement) return;
+    
+      const clone = startElement.cloneNode(true);
+    
+      const startRect = startElement.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+    
+      clone.style.position = "fixed";
+      clone.style.left = `${startRect.left}px`;
+      clone.style.top = `${startRect.top}px`;
+      clone.style.width = `${startRect.width}px`;
+      clone.style.height = `${startRect.height}px`;
+      clone.style.zIndex = "9999";
+      clone.style.pointerEvents = "none";
+    
+      document.body.appendChild(clone);
+    
+      gsap.to(clone, {
+        x: targetRect.left - startRect.left,
+        y: targetRect.top - startRect.top,
+        scale: 0.3,
+        duration: 0.8,
+        ease: "power2.inOut",
+        onComplete: () => {
+          clone.remove();
+        },
+      });
+    };
+  let heandleWislist = (e) => {
+      flyAnimation(e.currentTarget, "#wishlist-icon");
+  };
   return (
     <>
         
@@ -102,7 +138,7 @@ Sowdagar Trouser</h3>
    <FaCheck className='text-green-600'/>
    <h4 className='text-[#333333] font-poppins font-semibold text-[18px]'>4320 <span className=' font-normal'>Sold</span></h4>
  </div>
- <button className='text-[#0198E9] font-poppins font-bold text-[18px] flex gap-2 items-center cursor-pointer'><FaHeart className='text-[#A7A7A7]'/> Add to wishlist</button>
+ <button   className='text-[#0198E9] font-poppins font-bold text-[18px] relative flex gap-2 items-center  z-1 cursor-pointer pl-5'><div onClick={heandleWislist} className="  w-full h-full   absolute "><FaHeart  className='text-[#A7A7A7] absolute   top-1 -left-5 '/></div> Add to wishlist</button>
 </div>
 <div className=" flex items-center gap-5.25">
   <p className=' text-[36px] font-poppins text-[#0198E9] font-semibold'>$976.33</p> <del className='text-[#8D8D8D] font-normal text-[20px] font-poppins'>$1020.99</del>
@@ -139,7 +175,7 @@ Sowdagar Trouser</h3>
   </div>
  </div>
 
-    <button className='bg-[#0198E9] text-white border border-[#0198E9] px-11 py-3.5  text-[20px] font-medium font-poppins rounded-[3px] cursor-pointer'>Add Cart</button>
+    <button  className='bg-[#0198E9] text-white border border-[#0198E9] px-11 py-3.5  text-[20px] font-medium font-poppins rounded-[3px] cursor-pointer'>Add Cart</button>
   <button className='text-[#0198E9] border border-[#0198E9] px-11 py-3.5  text-[20px] font-medium font-poppins rounded-[3px] cursor-pointer'>Buy Now</button>
 
 </div>
@@ -160,3 +196,10 @@ Sowdagar Trouser</h3>
     </>
   )
 }
+
+
+
+
+
+
+

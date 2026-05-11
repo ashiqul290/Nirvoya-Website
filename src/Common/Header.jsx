@@ -82,9 +82,9 @@ export const Header = () => {
 ];
   return (
     <>
-      <header className=" border-b sticky top-0 left-0 z-999 border-gray-100 bg-white">
+      <nav className="  bg-white">
         <Container>
-          <div className=" flex items-center justify-between my-8.25 py-2">
+          <div className=" flex items-center justify-between mt-8.25 py-2">
             <div className="">
               <img src={logo} alt="Logo" />
             </div>
@@ -103,17 +103,24 @@ export const Header = () => {
                 {" "}
                 <CiUser  className=" text-[24px]"/> Login
               </button>
-              <button className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
+              <button  id="wishlist-icon" className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
                 {" "}
                 <CiHeart className=" text-[24px]" /> Wishlist
               </button>
-              <button className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
+              <button  id="cart-icon" className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
                 {" "}
                 <img src={union} alt="Cart" /> my Cart
               </button>
             </div>
           </div>
-          <div className="mb-2.5">
+          
+          </Container>
+      </nav>
+
+      <header className="border-b  sticky top-0 left-0 z-999 border-gray-100">
+        <Container>
+          <div className="">
+            <div className="pb-2.5 sticky top-0 left-0 w-full py-5 bg-white">
             <ul className=" flex justify-between relative ">
               {
                 categories?.map((item)=>(
@@ -150,7 +157,8 @@ export const Header = () => {
               }
             </ul>
           </div>
-          </Container>
+          </div>
+        </Container>
       </header>
       </>
   );
