@@ -6,7 +6,7 @@ export const RoutePath = () => {
   return (
     <>
     
-      <div className=" flex items-center gap-1 text-[#02344F] font-poppins font-normal text-[16px] mt-14">
+      <div className=" flex items-center gap-1 text-[#02344F] font-poppins font-normal text-[16px] pt-14">
            <Link to={'/'}>
            Home
            </Link>
