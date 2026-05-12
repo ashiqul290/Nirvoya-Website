@@ -139,7 +139,7 @@ export const FeaturedProduct = () => {
     <>
       <div className="mt-12.5">
         <Container>
-          <div className=" pb-10">
+          <div className=" pb-10 px-5 xl:px-0">
             <div className="flex justify-between items-center mb-5">
               <h3 className=" text-[26px] font-poppins font-medium text-[#383838]">
                 Featured Product
@@ -149,7 +149,7 @@ export const FeaturedProduct = () => {
               </button>
             </div>
 
-            <div className=" grid grid-cols-4 gap-6.5">
+            <div className=" grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6.5">
               {products.slice(0, visibleCount).map((item) => (
                 <ProductCart key={item.id} item={item} />
               ))}
