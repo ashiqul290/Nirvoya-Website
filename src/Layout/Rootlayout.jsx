@@ -7,10 +7,12 @@ import ScrollToTop from "../Common/TopToScroll";
 const Rootlayout = () => {
   return (
     <>
-    <ScrollToTop />
+   <div className="mx-5 md:px-0">
+     <ScrollToTop />
     <Header />
       <Outlet />
       <Footer />
+   </div>
     </>
   );
 };

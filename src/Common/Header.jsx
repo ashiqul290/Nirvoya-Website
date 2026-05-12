@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "./Container";
 import logo from "../assets/HeaderImg/logo.png";
 import { IoIosSearch } from "react-icons/io";
 import { CiHeart, CiUser } from "react-icons/ci";
 import union from "../assets/HeaderImg/Union.png";
 export const Header = () => {
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        setShow(true); // scroll up → show
+      } else {
+        setShow(false); // scroll down → hide
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+
  const categories = [
   {
     name: "Women's Fashion",
@@ -82,7 +106,9 @@ export const Header = () => {
 ];
   return (
     <>
-      <nav className="  bg-white">
+      <nav className={`  bg-white sticky top-0 left-0 w-full z-50 transition-transform duration-300 ${show ?  "border-b border-white": "border-b border-gray-200"} ` } style={{
+          transform: show ? "translateY(0)" : "translateY(-100%)", border : show ? "" : "",
+        }}>
         <Container>
           <div className=" flex items-center justify-between mt-8.25 py-2">
             <div className="">
@@ -101,15 +127,15 @@ export const Header = () => {
             <div className=" flex items-center gap-10">
               <button className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
                 {" "}
-                <CiUser  className=" text-[24px]"/> Login
+                <CiUser  className=" text-[24px]"/> <span>Login</span>
               </button>
               <button  id="wishlist-icon" className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
                 {" "}
-                <CiHeart className=" text-[24px]" /> Wishlist
+                <CiHeart className=" text-[24px]" /> <span>Wishlist</span>
               </button>
               <button  id="cart-icon" className="text-[16px] font-normal flex gap-0.75 items-center cursor-pointer">
                 {" "}
-                <img src={union} alt="Cart" /> my Cart
+                <img src={union} alt="Cart" /> <span>my Cart</span>
               </button>
             </div>
           </div>
@@ -117,7 +143,7 @@ export const Header = () => {
           </Container>
       </nav>
 
-      <header className="border-b  sticky top-0 left-0 z-999 border-gray-100">
+      <header className="border-b bg-white sticky top-0 left-0 z-45 border-gray-200">
         <Container>
           <div className="">
             <div className="pb-2.5 sticky top-0 left-0 w-full py-5 bg-white">
