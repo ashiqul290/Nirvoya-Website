@@ -41,12 +41,12 @@ export const FlashDeals = () => {
     <>
     <div className="">
         <Container>
-            <div className="">
+            <div className=" px-5 xl:px-0">
               <div className="flex justify-between items-center mb-5">
                   <h3 className=' text-[26px] font-poppins font-medium text-[#383838]'>Flash Deals</h3>
                   <button className=' flex items-center gap-2 text-[16px] font-medium text-[#757575] font-poppins cursor-pointer'>View more <FaArrowRight /> </button>
               </div>
-            <div className="flex justify-between gap-6">
+            <div className=" grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
                {
                 products.map((item)=>(
                      <ProductCart item={item} />

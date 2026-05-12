@@ -55,7 +55,7 @@ export const ProductCart = ({ item }) => {
     <>
       {/* <Link to={'/view-product'}> */}
 
-      <div className="w-83  border border-gray-200 rounded-[15px] relative bg-white p-2">
+      <div className="max-w-83  border border-gray-200 rounded-[15px] relative bg-white p-2">
         <div
           onClick={handleMain}
           className="w-full flex cursor-pointer justify-center rounded-[10px] h-78.25 relative bg-gray-100"
