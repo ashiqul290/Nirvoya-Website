@@ -81,15 +81,15 @@ export const Category = () => {
     ]
   return (
     <>
-    <div className="mt-12.5 pb-11.25">
+    <div className="mt-12.5 pb-11.25 px-5 xl:px-0">
         <Container>
             <div className="">
                 <h3 className=' text-[26px] font-poppins font-medium text-[#383838]'>Category</h3>
-                <div className=" mt-8 grid grid-cols-5 gap-3">
+                <div className=" mt-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                     {
                        category.map((item)=>(
 
-                    <div className=" flex items-center w-67.5 justify-between pl-4.75 py-4 pr-2 bg-white shadow-[0_0_15px] shadow-black/10 rounded-[5px] cursor-pointer">
+                    <div className=" flex items-center max-w-67.5 justify-between pl-4.75 py-4 pr-2 bg-white shadow-[0_0_15px] shadow-black/10 rounded-[5px] cursor-pointer">
                        <div className=" flex gap-2.5 items-center">
                          <img src={item.icon} alt="icon" />
                         <h2 className=' font-poppins text-[16px] font-normal text-[#394146]'>{item.name}</h2>

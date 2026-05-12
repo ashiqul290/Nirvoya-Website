@@ -10,7 +10,7 @@ export const Home = () => {
     <>
     <div className=' bg-gray-50'>
 
-     <Banner />
+     {/* <Banner /> */}
      <Category />
      <FlashDeals />
     <FeaturedProduct />
