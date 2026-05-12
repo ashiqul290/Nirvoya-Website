@@ -58,9 +58,9 @@ export const ProductCart = ({ item }) => {
       <div className="max-w-83  border border-gray-200 rounded-[15px] relative bg-white p-2">
         <div
           onClick={handleMain}
-          className="w-full flex cursor-pointer justify-center rounded-[10px] h-78.25 relative bg-gray-100"
+          className="w-full flex cursor-pointer justify-center rounded-[10px] md:h-78.25 relative bg-gray-100"
         >
-          <img src={item?.img} className=" rounded-[10px]" alt="product" />
+          <img src={item?.img} className=" rounded-[10px] w-full" alt="product" />
           {item.discoutprice && (
             <span className=" absolute top-0 left-0 px-3 py-2 text-[14px] font-semibold font-poppins bg-gradient-to-r from-[#FF7A00] to-[#FFB800] rounded-r rounded-b rounded-tl-[10px] text-white">
               -{item?.discoutprice}% OFF
@@ -83,17 +83,17 @@ export const ProductCart = ({ item }) => {
             <FaStar className="text-gray-500" />
             <span>(0)</span>
           </div>
-          <h2 className=" text-[18px] h-12 overflow-hidden  font-poppins font-normal text-[#383838] leading-[120%] my-2.5">
+          <h2 className=" text-[14px] md:text-[18px] h-9 md:h-12 overflow-hidden  font-poppins font-normal text-[#383838] leading-[120%] my-2.5">
             {item?.title}
           </h2>
           <div className=" flex justify-between items-center">
-            <p className=" text-[#0970CD] font-bold text-[22px] font-poppins">
+            <p className=" text-[#0970CD] font-bold text-[16px] md:text-[22px] font-poppins">
               ৳{item?.price}
             </p>
           </div>
            
         </div>
-            <button onClick={handlebtn} className=" absolute right-2  px-2 py-2  bottom-2 cursor-pointer">
+            <button onClick={handlebtn} className=" absolute right-2  px-2 py-2 bottom-1 md:bottom-2 cursor-pointer">
               {" "}
               <img src={cart} alt="cart" />
             </button>

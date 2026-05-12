@@ -143,6 +143,15 @@ export const Header = () => {
     {
       name: "Food & Grocery",
     },
+    {
+      name: "Food & Grocery",
+    },
+    {
+      name: "Food & Grocery",
+    },
+    {
+      name: "Food & Grocery",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -154,9 +163,9 @@ export const Header = () => {
       if (window.innerWidth >= 1536) {
         setItemsPerPage(8);
       } else if (window.innerWidth >= 1280) {
-        setItemsPerPage(6);
+        setItemsPerPage(8);
       } else if (window.innerWidth >= 1024) {
-        setItemsPerPage(5);
+        setItemsPerPage(8);
       } else if (window.innerWidth >= 768) {
         setItemsPerPage(4);
       } else {
@@ -194,7 +203,7 @@ export const Header = () => {
   return (
     <>
       <nav
-        className={`  bg-white sticky px-5 xl:px-0 top-0 left-0 w-full z-50 transition-transform duration-300 ${show ? "border-b border-white" : "border-b border-gray-200"} `}
+        className={`  bg-white sticky px-5 pb-2 xl:px-0 top-0 left-0 w-full z-50 transition-transform duration-300 ${show ? "border-b border-white" : "border-b border-gray-200"} `}
         style={{
           transform: show ? "translateY(0)" : "translateY(-100%)",
         }}
@@ -239,7 +248,7 @@ export const Header = () => {
             </div>
           </div>
 
-          <div className=" md:hidden bg-gray-100 max-w-194.5 flex justify-between rounded-l-[10px] rounded-r-[10px]">
+          <div className=" md:hidden bg-gray-100 max-w-194.5  flex justify-between rounded-l-[10px] rounded-r-[10px]">
             <input
               type="text"
               className="w-full outline-none py-3.25 pl-5"
@@ -255,29 +264,23 @@ export const Header = () => {
       <header className="border-b px-5 md:px-0 bg-white sticky top-0 left-0 z-45 border-gray-200">
         <Container>
           <div className="">
-            <div className="pb-2.5 sticky flex justify-between top-0 left-0 w-full py-5 bg-white">
+            <div className="pb-2.5 sticky flex justify-between items-start top-0 left-0 w-full py-5 bg-white">
               <button
-                   onClick={handlePrev}
-            disabled={currentIndex === 0}
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
                 className=" text-[20px] text-gray-600  cursor-pointer"
               >
-                {" "}
+                
                 <IoIosArrowBack />
               </button>
               <ul
-                className="     grid 
-    grid-cols-3
-    md:grid-cols-4
-    lg:grid-cols-5
-    xl:grid-cols-6
-    2xl:grid-cols-8
-    gap-2 md:gap-4.5 relative"
+                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-2 relative"
               >
                 {visibleCategories?.map((item, index) => (
                   <>
                     <li
                       key={index}
-                      className=" text-[14px] md:text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
+                      className=" text-[11px] sm:text-[14px] md:text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
             after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full group "
                     >
                       {item?.name}
@@ -308,8 +311,8 @@ export const Header = () => {
                 ))}
               </ul>
               <button
-                  onClick={handleNext}
-            disabled={currentIndex + itemsPerPage >= categories.length}
+                onClick={handleNext}
+                disabled={currentIndex + itemsPerPage >= categories.length}
                 className=" text-[20px] text-gray-600  cursor-pointer"
               >
                 <IoIosArrowForward />

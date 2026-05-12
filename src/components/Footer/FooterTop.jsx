@@ -7,9 +7,9 @@ import img4 from '../../assets/Footer/top/Vector (8).png'
 export const FooterTop = () => {
   return (
     <>
-    <div className="py-12.5 border-b border-gray-200">
+    <div className="py-12.5 border-b   border-gray-200">
         <Container>
-            <div className=" flex gap-24.75 justify-center ">
+            <div className=" grid px-5 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24.75  ">
                 <div className=" flex gap-4.5 items-center">
                     <img src={img1} className='w-15.25' alt="img" />
                     <div className="">

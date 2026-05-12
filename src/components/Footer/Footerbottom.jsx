@@ -7,10 +7,10 @@ export const Footerbottom = () => {
     <>
     <div className="py-3.75 border-t border-gray-200">
         <Container>
-            <div className=" flex justify-between items-center">
-                <h3 className=' text-[#757575] font-poppins text-[16px] font-normal'>Projectnirvoya -   © 2021 All Rights Reserved</h3>
+            <div className=" flex px-5 xl:px-0 lg:justify-between justify-center items-center">
+                <h3 className=' text-[#757575]  font-poppins text-[16px] font-normal'>Projectnirvoya -   © 2021 All Rights Reserved</h3>
 
-                <div className="flex items-center">
+                <div className="lg:flex items-center hidden ">
                     <img src={img1} alt="" />
                     <img src={img2} alt="" />
                 </div>

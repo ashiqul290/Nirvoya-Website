@@ -11,10 +11,10 @@ export const FooterMain = () => {
     <>
       <div className="my-15">
         <Container>
-          <div className=" flex justify-between">
+          <div className=" grid grid-cols-1 px-5 xl:px-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="">
                 <img src={logo} alt="" />
-                <p className=" font-poppins text-[18px] leading-7 text-[#333333] mb-6.75 mt-8.75 w-97.5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p className=" font-poppins text-[18px] leading-7 text-[#333333] mb-6.75 mt-8.75 max-w-97.5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <div className=" flex gap-5 ">
                     <img src={icon1} className=" w-10.25" alt="" />
                     <img src={icon2} className=" w-10.25" alt="" />
@@ -22,7 +22,7 @@ export const FooterMain = () => {
                     <img src={icon4} className=" w-10.25" alt="" />
                 </div>
             </div>
-            <div className="">
+            <div className="mt-6 md:mt-0">
                 <h4 className=" font-poppins text-[20px] font-medium text-[#333333]">QUICK LINKS</h4>
                 <ul className="mt-6.25">
                     <li className=" font-poppins text-[18px] font-normal leading-11 text-[#333333]/80">About us</li>
@@ -32,7 +32,7 @@ export const FooterMain = () => {
                     <li className=" font-poppins text-[18px] font-normal leading-11 text-[#333333]/80">Sign Up</li>
                 </ul>
             </div>
-            <div className="">
+            <div className="mt-6 lg:mt-0">
                 <h4 className=" font-poppins text-[20px] font-medium text-[#333333]">CUSTOMER AREA</h4>
                 <ul className="mt-6.25">
                     <li className="font-poppins text-[18px] font-normal leading-11 text-[#333333]/80">My Account</li>
@@ -42,7 +42,7 @@ export const FooterMain = () => {
                     <li className="font-poppins text-[18px] font-normal leading-11 text-[#333333]/80">Shipping Information</li>
                 </ul>
             </div>
-            <div className="">
+            <div className="mt-6 xl:mt-0">
                 <h4 className=" font-poppins text-[20px] font-medium text-[#333333]">CONTACT</h4>
                <p className="text-[#333333]/80 text-[16px] font-normal font-poppins leading-6 max-w-85 mb-7.75 mt-6.25">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
                <div className=" flex items-center gap-6.75">
