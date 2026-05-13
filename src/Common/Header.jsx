@@ -280,13 +280,13 @@ export const Header = () => {
                   <>
                     <li
                       key={index}
-                      className=" text-[11px] sm:text-[14px] md:text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
+                      className=" text-[14px] sm:text-[14px] md:text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
             after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full group "
                     >
                       {item?.name}
                       <div className="">
                         {item?.subcategories && (
-                          <div className=" hidden absolute top-full left-0 w-350  border border-gray-100 scale-z-110 bg-white px-17.75 pt-7.75 pb-6.5 group-hover:grid grid-cols-5 gap-15">
+                          <div className=" hidden absolute top-full left-0 w-100 sm:w-150 md:w-170 lg:w-230 xl:w-350  border border-gray-100 scale-z-110 bg-white px-17.75 pt-7.75 pb-6.5 group-hover:grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-15">
                             {item?.subcategories?.map((item) => (
                               <>
                                 <div className="">
