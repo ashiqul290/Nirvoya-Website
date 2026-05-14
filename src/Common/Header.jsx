@@ -165,7 +165,7 @@ export const Header = () => {
       } else if (window.innerWidth >= 1280) {
         setItemsPerPage(8);
       } else if (window.innerWidth >= 1024) {
-        setItemsPerPage(8);
+        setItemsPerPage(7);
       } else if (window.innerWidth >= 768) {
         setItemsPerPage(4);
       } else {
@@ -274,13 +274,13 @@ export const Header = () => {
                 <IoIosArrowBack />
               </button>
               <ul
-                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-2 relative"
+                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-1 2xs:gap-3 sm:gap-5 lg:gap-4 md:gap-2 relative"
               >
                 {visibleCategories?.map((item, index) => (
                   <>
                     <li
                       key={index}
-                      className=" text-[14px] sm:text-[14px] md:text-[16px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
+                      className=" text-[8px] xs:text-[11px] 2xs:text-[14px] sm:text-[14px] md:text-[15px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
             after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full group "
                     >
                       {item?.name}

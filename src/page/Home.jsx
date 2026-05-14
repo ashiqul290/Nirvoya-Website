@@ -4,6 +4,7 @@ import { Banner } from '../components/Home/Banner'
 import { Category } from '../components/Home/Category'
 import { FlashDeals } from '../components/Home/FlashDeals'
 import { FeaturedProduct } from '../components/Home/FeaturedProduct'
+import BannerRes from '../Res/Home/BannerRes'
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
     <div className=' bg-gray-50'>
 
      <Banner />
+     <BannerRes />
      <Category />
      <FlashDeals />
     <FeaturedProduct />
