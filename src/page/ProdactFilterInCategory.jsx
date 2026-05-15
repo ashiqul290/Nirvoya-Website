@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { Container } from '../Common/Container'
-import { IoStar } from 'react-icons/io5'
+import { IoClose, IoStar } from 'react-icons/io5'
 import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io'
 import productimg1 from "../assets/FeaturedProduct/image (1).png";
 import { ProductCart } from '../Common/ProductCart';
+import { FaBarsStaggered } from 'react-icons/fa6';
 
 export const ProdactFilterInCategory = () => {
- const [minPrice, setMinPrice] = useState(1000);
-const maxPrice = 2500;
- 
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [minPrice, setMinPrice] = useState(1000);
+    const maxPrice = 2500;
+
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
 
@@ -52,70 +54,70 @@ const maxPrice = 2500;
     const startIndex = (currentPage - 1) * itemsPerPage;
     const selectedProducts = products.slice(startIndex, startIndex + itemsPerPage);
 
-const handleNext = () => {
-    if (currentPage < totalPages) {
-        setCurrentPage(currentPage + 1);
-         window.scrollTo({
-            top: 0,
-        });
+    const handleNext = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+            window.scrollTo({
+                top: 0,
+            });
 
-    }
-};
+        }
+    };
 
-const handlePrevious = () => {
-    if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);
-         window.scrollTo({
-            top: 0,
-        });
-    }
-};
-  return (
-    <>
-        
-    <div className="pt-10.75 pb-12.5  bg-gray-50">
-       
-             <Container>
-            <div className=" flex gap-13.25 items-start">
-                <div className="w-75 border  bg-white border-gray-100 rounded-[10px]">
-                   <div className="pl-4.75 pr-3">
-                     <h2 className=' font-medium font-poppins text-[18px] text-[#383838] mt-6.25'>Related Categories</h2>
-                    <h3 className=' text-[#757575] font-poppins font-normal text-[16px]'>* Men’s fashion</h3>
-                    <ul className='ml-5 '>
-                        <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men’s Jacket</li>
-                        <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men's T-Shirts</li>
-                        <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Casual Shirts</li>
-                        <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Summer T-Shirts</li>
-                    </ul>
-                   </div>
-                   <hr className='mt-4.5 mb-5.5 text-gray-300'/>
-                    <div className="pl-4.75 pr-3">
-            <div className="flex justify-between items-center">
-                <h2 className="font-medium font-poppins text-[18px] text-[#383838]">
-                    Filter by Price
-                </h2>
-            </div>
+    const handlePrevious = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+            window.scrollTo({
+                top: 0,
+            });
+        }
+    };
+    return (
+        <>
 
-         <div className="mt-5 relative">
-    {/* Background Track */}
-    <div className="w-full h-[4px] bg-gray-300 rounded-full"></div>
+            <div className="pt-10.75 pb-12.5 px-5 lg:px-0 bg-gray-50">
 
-    {/* Active Track */}
-    <div
-        className="absolute top-0 h-[4px] bg-[#0198E9] rounded-full"
-        style={{
-            width: `${(minPrice / maxPrice) * 100}%`,
-        }}
-    ></div>
+                <Container>
+                    <div className=" flex gap-13.25 items-start relative">
+                        <div className="w-75 border  hidden md:block bg-white border-gray-100 rounded-[10px]">
+                            <div className="pl-4.75 pr-3">
+                                <h2 className=' font-medium font-poppins text-[18px] text-[#383838] mt-6.25'>Related Categories</h2>
+                                <h3 className=' text-[#757575] font-poppins font-normal text-[16px]'>* Men’s fashion</h3>
+                                <ul className='ml-5 '>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men’s Jacket</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men's T-Shirts</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Casual Shirts</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Summer T-Shirts</li>
+                                </ul>
+                            </div>
+                            <hr className='mt-4.5 mb-5.5 text-gray-300' />
+                            <div className="pl-4.75 pr-3">
+                                <div className="flex justify-between items-center">
+                                    <h2 className="font-medium font-poppins text-[18px] text-[#383838]">
+                                        Filter by Price
+                                    </h2>
+                                </div>
 
-    {/* Slider */}
-    <input
-        type="range"
-        min="0"
-        max={maxPrice}
-        value={minPrice}
-        onChange={(e) => setMinPrice(Number(e.target.value))}
-        className="absolute top-[-6px] w-full appearance-none bg-transparent
+                                <div className="mt-5 relative">
+                                    {/* Background Track */}
+                                    <div className="w-full h-[4px] bg-gray-300 rounded-full"></div>
+
+                                    {/* Active Track */}
+                                    <div
+                                        className="absolute top-0 h-[4px] bg-[#0198E9] rounded-full"
+                                        style={{
+                                            width: `${(minPrice / maxPrice) * 100}%`,
+                                        }}
+                                    ></div>
+
+                                    {/* Slider */}
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max={maxPrice}
+                                        value={minPrice}
+                                        onChange={(e) => setMinPrice(Number(e.target.value))}
+                                        className="absolute top-[-6px] w-full appearance-none bg-transparent
         [&::-webkit-slider-thumb]:appearance-none
         [&::-webkit-slider-thumb]:h-4
         [&::-webkit-slider-thumb]:w-4
@@ -124,119 +126,220 @@ const handlePrevious = () => {
         [&::-webkit-slider-thumb]:shadow-[0_0_5px]
         [&::-webkit-slider-thumb]:shadow-black/50
         [&::-webkit-slider-thumb]:cursor-pointer"
-    />
-</div>   
+                                    />
+                                </div>
 
-            <h3 className="text-[18px]  font-medium font-poppins mt-6 text-[#383838]">
-                <span className="text-[#A7A7A7] ">Price:</span> ৳{minPrice} -
-                ৳{maxPrice}
-            </h3>
-        </div>
-                     <hr className='mt-4.5 mb-5.5 text-gray-300'/>
-                    <div className="pl-4.75 pr-3 mb-7">
-                       <div className=" flex items-center justify-between">
-                         <h2 className=' font-medium font-poppins text-[18px] text-[#383838]'>Filter by Rating</h2>
-                          <IoIosArrowDown />
-                       </div>
-                        <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="1" />
-                            <IoStar />
+                                <h3 className="text-[18px]  font-medium font-poppins mt-6 text-[#383838]">
+                                    <span className="text-[#A7A7A7] ">Price:</span> ৳{minPrice} -
+                                    ৳{maxPrice}
+                                </h3>
+                            </div>
+                            <hr className='mt-4.5 mb-5.5 text-gray-300' />
+                            <div className="pl-4.75 pr-3 mb-7">
+                                <div className=" flex items-center justify-between">
+                                    <h2 className=' font-medium font-poppins text-[18px] text-[#383838]'>Filter by Rating</h2>
+                                    <IoIosArrowDown />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="1" />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="2" />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="3" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="4" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="5" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="2" />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-                        <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="3" />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-                        <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="4"/>
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-                        <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
-                            <input type="checkbox" className=' w-6 h-6' value="5" />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                            <IoStar />
-                        </div>
-                    </div>
-                </div>
-                <div className="w-full  ">
-                    <div className=" mt-5.5 flex items-center justify-between">
-                        <h3 className=' text-[#424241]/50 font-medium text-[18px] font-poppins'>Showing  <span className='text-[#424241]'>20</span> of <span className='text-[#424241]'>160</span> product</h3>
-                        <h3 className=' text-[#424241]/50 font-medium text-[18px] font-poppins flex gap-2 items-center'>Sort by: 
-                        {/* <button className=' flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200'> Newest Items <IoIosArrowDown /></button> */}
-                        <select name="" id="" className='flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200 outline-none'>
-                            <option value="Newest Items " >Newest Items </option>
-                            <option value="Newest Items " >2Newest Items </option>
-                            <option value="Newest Items " >3Newest Items </option>
-                            <option value="Newest Items " >4Newest Items </option>
-                        </select>
-                        </h3>
-                    </div>
-                      {/* Products */}
-                <div className="grid grid-cols-3 gap-6.5 mt-5.5">
-                    {
-                        selectedProducts.map((item) => (
-                            <ProductCart key={item.id} item={item} />
-                        ))
-                    }
-                </div>
+                        
+                         <div className={`w-75 border absolute top-18 left-0 z-30 bg-white border-gray-100 rounded-[10px] p-5 transition-transform duration-300 ease-in-out ${isFilterOpen ? 'translate-x-0' : '-translate-x-full -ml-20'} md:hidden`}>
+                            <div className="pl-4.75 pr-3 relative">
+                                     <button onClick={()=>setIsFilterOpen(false)} className=' absolute top-0 right-0 text-2xl cursor-pointer'><IoClose /></button>
+                                <h2 className=' font-medium font-poppins text-[18px] text-[#383838] mt-6.25'>Related Categories</h2>
+                                <h3 className=' text-[#757575] font-poppins font-normal text-[16px]'>* Men’s fashion</h3>
+                                <ul className='ml-5 '>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men’s Jacket</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Men's T-Shirts</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Casual Shirts</li>
+                                    <li className=' text-[#757575] font-poppins font-normal text-[16px] hover:text-[#0198E9] duration-300 mt-1.25 cursor-pointer'>Summer T-Shirts</li>
+                                </ul>
+                            </div>
+                            <hr className='mt-4.5 mb-5.5 text-gray-300' />
+                            <div className="pl-4.75 pr-3">
+                                <div className="flex justify-between items-center">
+                                    <h2 className="font-medium font-poppins text-[18px] text-[#383838]">
+                                        Filter by Price
+                                    </h2>
+                                </div>
 
-                   <div className="flex gap-4.5 items-center justify-end mt-10">
+                                <div className="mt-5 relative">
+                                    {/* Background Track */}
+                                    <div className="w-full h-[4px] bg-gray-300 rounded-full"></div>
 
-    {/* Previous */}
-    <button
-        onClick={handlePrevious}
-        disabled={currentPage === 1}
-        className='px-6.5 py-3 font-semibold cursor-pointer text-[18px] text-[#0198E9] border border-gray-200 flex items-center gap-2 rounded-[10px] disabled:opacity-50'
-    >
-        <IoIosArrowForward className="rotate-180" />
-        Previous
-    </button>
+                                    {/* Active Track */}
+                                    <div
+                                        className="absolute top-0 h-[4px] bg-[#0198E9] rounded-full"
+                                        style={{
+                                            width: `${(minPrice / maxPrice) * 100}%`,
+                                        }}
+                                    ></div>
 
-    {/* Page Numbers */}
-    <div className="flex ">
-        {
-            [...Array(totalPages)].map((_, index) => (
-                <button
-                    key={index}
-                    onClick={() => setCurrentPage(index + 1)}
-                    className={`px-6.5 py-3 font-semibold text-[18px] border border-gray-200 rounded-[5px] cursor-pointer 
+                                    {/* Slider */}
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max={maxPrice}
+                                        value={minPrice}
+                                        onChange={(e) => setMinPrice(Number(e.target.value))}
+                                        className="absolute top-[-6px] w-full appearance-none bg-transparent
+        [&::-webkit-slider-thumb]:appearance-none
+        [&::-webkit-slider-thumb]:h-4
+        [&::-webkit-slider-thumb]:w-4
+        [&::-webkit-slider-thumb]:rounded-full
+        [&::-webkit-slider-thumb]:bg-white
+        [&::-webkit-slider-thumb]:shadow-[0_0_5px]
+        [&::-webkit-slider-thumb]:shadow-black/50
+        [&::-webkit-slider-thumb]:cursor-pointer"
+                                    />
+                                </div>
+
+                                <h3 className="text-[18px]  font-medium font-poppins mt-6 text-[#383838]">
+                                    <span className="text-[#A7A7A7] ">Price:</span> ৳{minPrice} -
+                                    ৳{maxPrice}
+                                </h3>
+                            </div>
+                            <hr className='mt-4.5 mb-5.5 text-gray-300' />
+                            <div className="pl-4.75 pr-3 mb-7">
+                                <div className=" flex items-center justify-between">
+                                    <h2 className=' font-medium font-poppins text-[18px] text-[#383838]'>Filter by Rating</h2>
+                                    <IoIosArrowDown />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="1" />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="2" />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="3" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="4" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                                <div className="flex gap-2 mt-4 text-[24px] text-[#FFB340] ">
+                                    <input type="checkbox" className=' w-6 h-6' value="5" />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                    <IoStar />
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div className="w-full  ">
+                            <div className=" mt-5.5 flex items-center justify-between">
+                                <div className=" flex items-center gap-2">
+                                       {
+                                        isFilterOpen ? <button onClick={()=>setIsFilterOpen(false)} className=' text-2xl cursor-pointer mr-2'><IoClose /></button> : <button onClick={()=>setIsFilterOpen(true)} className='text-2xl cursor-pointerm md:hidden mr-2'><FaBarsStaggered /></button> 
+                                       }
+                                <h3 className=' text-[#424241]/50 font-medium text-sm sm:text-[18px] font-poppins'>Showing  <span className='text-[#424241]'>20</span> of <span className='text-[#424241]'>160</span> product</h3>
+                                </div>
+                                <h3 className=' text-[#424241]/50 font-medium text-sm sm:text-[18px] font-poppins flex gap-2 items-center'>Sort by:
+                                    {/* <button className=' flex items-center gap-1 border text-[#424241] px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200'> Newest Items <IoIosArrowDown /></button> */}
+                                    <select name="" id="" className='flex items-center gap-1 border text-[#424241] sm:px-3.75 py-1.5 cursor-pointer rounded-[5px] border-gray-200 outline-none'>
+                                        <option value="Newest Items " >Newest Items </option>
+                                        <option value="Newest Items " >2Newest Items </option>
+                                        <option value="Newest Items " >3Newest Items </option>
+                                        <option value="Newest Items " >4Newest Items </option>
+                                    </select>
+                                </h3>
+                            </div>
+                            {/* Products */}
+                            <div className="grid grid-cols-1  2xs:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6.5 md:gap-2 mt-5.5">
+                                {
+                                    selectedProducts.map((item) => (
+                                        <ProductCart key={item.id} item={item} />
+                                    ))
+                                }
+                            </div>
+
+                            <div className="flex sm:gap-4.5 gap-3 items-center justify-end mt-10">
+
+                                {/* Previous */}
+                                <button
+                                    onClick={handlePrevious}
+                                    disabled={currentPage === 1}
+                                    className='sm:px-6.5 px-2 py-2 sm:py-3 font-semibold cursor-pointer text-[18px] text-[#0198E9] border border-gray-200 flex items-center gap-2 rounded-[10px] disabled:opacity-50'
+                                >
+                                    <IoIosArrowForward className="rotate-180" />
+                                    Previous
+                                </button>
+
+                                {/* Page Numbers */}
+                                <div className="flex ">
+                                    {
+                                        [...Array(totalPages)].map((_, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => setCurrentPage(index + 1)}
+                                                className={`sm:px-6.5 px-5 py-2 sm:py-3 font-semibold text-[18px] border border-gray-200 rounded-[5px] cursor-pointer 
                     ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
-                >
-                    {index + 1}
-                </button>
-            ))
-        }
-    </div>
+                                            >
+                                                {index + 1}
+                                            </button>
+                                        ))
+                                    }
+                                </div>
 
-    {/* Next */}
-    <button
-        onClick={handleNext}
-        disabled={currentPage === totalPages}
-        className='px-6.5 py-3 font-semibold text-[18px] cursor-pointer text-[#0198E9] border border-gray-200 flex items-center gap-2 rounded-[10px] disabled:opacity-50'
-    >
-        Next <IoIosArrowForward />
-    </button>
+                                {/* Next */}
+                                <button
+                                    onClick={handleNext}
+                                    disabled={currentPage === totalPages}
+                                    className='sm:px-6.5 px-2 py-2 sm:py-3 font-semibold text-[18px] cursor-pointer text-[#0198E9] border border-gray-200 flex items-center gap-2 rounded-[10px] disabled:opacity-50'
+                                >
+                                    Next <IoIosArrowForward />
+                                </button>
 
-</div>
+                            </div>
 
-                </div>
+                        </div>
+                    </div>
+                </Container>
+
             </div>
-        </Container>
-    
-    </div>
 
-    </>
-  )
+        </>
+    )
 }
