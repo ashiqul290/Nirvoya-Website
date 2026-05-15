@@ -264,17 +264,17 @@ export const Header = () => {
       <header className="border-b px-5 md:px-0 bg-white sticky top-0 left-0 z-45 border-gray-200">
         <Container>
           <div className="">
-            <div className="pb-2.5 sticky flex justify-between items-start top-0 left-0 w-full py-5 bg-white">
+            <div className="pb-2.5 sticky flex justify-between items-center top-0 left-0 w-full py-5 bg-white">
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
-                className=" text-[20px] text-gray-600  cursor-pointer"
+                className=" text-[15px] lg:hidden text-gray-600  cursor-pointer"
               >
                 
                 <IoIosArrowBack />
               </button>
               <ul
-                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-1 2xs:gap-3 sm:gap-5 lg:gap-4 md:gap-2  relative"
+                className="  grid xl:flex xl:justify-between xl:gap-10  grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-1 2xs:gap-3 sm:gap-5 lg:gap-4 md:gap-2  relative"
               >
                 {visibleCategories?.map((item, index) => (
                   <>
@@ -313,7 +313,7 @@ export const Header = () => {
               <button
                 onClick={handleNext}
                 disabled={currentIndex + itemsPerPage >= categories.length}
-                className=" text-[20px] text-gray-600  cursor-pointer"
+                className=" text-[15px] lg:hidden text-gray-600  cursor-pointer"
               >
                 <IoIosArrowForward />
               </button>
