@@ -274,19 +274,19 @@ export const Header = () => {
                 <IoIosArrowBack />
               </button>
               <ul
-                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-1 2xs:gap-3 sm:gap-5 lg:gap-4 md:gap-2 relative"
+                className="grid  grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 gap-1 2xs:gap-3 sm:gap-5 lg:gap-4 md:gap-2  relative"
               >
                 {visibleCategories?.map((item, index) => (
                   <>
                     <li
                       key={index}
-                      className=" text-[8px] xs:text-[11px] 2xs:text-[14px] sm:text-[14px] md:text-[15px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
+                      className=" text-[8px] xs:text-[9px] 2xs:text-[14px] sm:text-[14px] md:text-[15px] text-[#333333] relative uppercase font-medium cursor-pointer hover:text-[#020202] duration-500 after:content-[''] after:absolute after:left-0 after:bottom-0
             after:h-0.5 after:w-0 after:bg-[#0970CD] after:duration-500 hover:after:w-full group "
                     >
                       {item?.name}
                       <div className="">
                         {item?.subcategories && (
-                          <div className=" hidden absolute top-full left-0 w-100 sm:w-150 md:w-170 lg:w-230 xl:w-350  border border-gray-100 scale-z-110 bg-white px-17.75 pt-7.75 pb-6.5 group-hover:grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-15">
+                          <div className=" hidden absolute top-full left-0 w-65 sm:w-150 md:w-170 lg:w-230 xl:w-350  border border-gray-100 scale-z-110 bg-white px-17.75 pt-7.75 pb-6.5 group-hover:grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-15">
                             {item?.subcategories?.map((item) => (
                               <>
                                 <div className="">
