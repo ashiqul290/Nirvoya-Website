@@ -89,10 +89,10 @@ export const Category = () => {
                     {
                        category.map((item)=>(
 
-                    <div className=" flex items-center max-w-67.5 justify-between pl-4.75 py-4 pr-2 bg-white shadow-[0_0_15px] shadow-black/10 rounded-[5px] cursor-pointer">
+                    <div className=" flex items-center max-w-67.5 justify-between pl-1 sm:pl-4.75 py-4 pr-1 sm:pr-2 bg-white shadow-[0_0_15px] shadow-black/10 rounded-[5px] cursor-pointer">
                        <div className=" flex gap-2.5 items-center">
                          <img src={item.icon} alt="icon" />
-                        <h2 className=' font-poppins text-[16px] font-normal text-[#394146]'>{item.name}</h2>
+                        <h2 className=' font-poppins text-[12px] sm:text-[16px] font-normal text-[#394146]'>{item.name}</h2>
                        </div>
                        <IoIosArrowForward className=' text-[#999999]  text-xl' />
                     </div>

@@ -141,15 +141,15 @@ export const FeaturedProduct = () => {
         <Container>
           <div className=" pb-10 px-5 xl:px-0">
             <div className="flex justify-between items-center mb-5">
-              <h3 className=" text-[26px] font-poppins font-medium text-[#383838]">
+              <h3 className=" text-[20px] sm:text-[26px] font-poppins font-medium text-[#383838]">
                 Featured Product
               </h3>
-              <button className=" flex items-center gap-2 text-[16px] font-medium text-[#757575] font-poppins cursor-pointer">
+              <button className=" flex items-center gap-2 sm:text-[16px] text-[14px] font-medium text-[#757575] font-poppins cursor-pointer">
                 View more <FaArrowRight />{" "}
               </button>
             </div>
 
-            <div className=" grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6.5">
+            <div className=" grid justify-center 2xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6.5">
               {products.slice(0, visibleCount).map((item) => (
                 <ProductCart key={item.id} item={item} />
               ))}

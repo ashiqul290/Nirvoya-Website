@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 const BannerRes = () => {
   return (
     <>
-       <div className="px-5 lg:px-0  mt-5 ">
+       <div className="px-5 lg:px-0 lg:hidden mt-5 ">
             {/* LEFT SLIDER */}
             <div className=" w-full">
               <Swiper
@@ -28,9 +28,9 @@ const BannerRes = () => {
               >
                
                 <SwiperSlide>
-                  <div className="  rounded-[10px] relative">
+                  <div className="  rounded-[10px]  relative">
                     <img src={sliderimg} className="w-full" alt="" />
-                    <div className=" absolute md:top-20 top-2 xs:left-4 left-2  2xs:left-8 2xs:top-8 sm:top-13 lg:left-15 sm:left-15">
+                    <div className=" absolute md:top-20 top-2 xs:left-4 left-2  2xs:left-8 2xs:top-5 sm:top-13 lg:left-15 sm:left-15">
                       <h1 className=" text-[#0970CD] font-bold md:text-[45px] 2xs:text-[25px] font-montserrat w-50 2xs:w-60 mt-2 sm:text-[35px] sm:w-80 xs:mt-6 md:w-121.5 ">
                         Explore Men’s Winter Collection
                       </h1>

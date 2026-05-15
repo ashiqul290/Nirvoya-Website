@@ -100,7 +100,7 @@ export const Banner = () => {
             </div>
 
             <div className="">
-              <div className="w-md h-66.75 hidden lg:block rounded-[10px] relative">
+              <div className="max-md h-66.75 bg-gray-500/25 hidden lg:block rounded-[10px] relative">
                 <img src={Groceres} alt="" />
                 <div className=" absolute bottom-4.5 left-22.5">
                   <button className=" rounded-[10px] bg-[#FAFAFA]/80 px-8 py-4 text-[#0198E9] font-semibold font-montserrat text-[20px]">
@@ -108,10 +108,10 @@ export const Banner = () => {
                   </button>
                 </div>
               </div>
-              <div className="w-md h-66.75 hidden lg:block relative mt-7 rounded-[10px]">
+              <div className="max-md h-66.75 bg-gray-500/25 hidden lg:block relative mt-7 rounded-[10px]">
                 <img src={beauty} alt="" />
                 <div className=" absolute bottom-4.5 left-13.5">
-                  <button className=" rounded-[10px] bg-[#FAFAFA]/80 px-8 py-4 text-[#0198E9] font-semibold font-montserrat text-[20px]">
+                  <button className=" rounded-[10px] bg-[#FAFAFA]/80 px-8 py-4 text-[#0198E9] font-semibold font-montserrat text-[18px] xl:text-[20px]">
                     Health & Beauty collection
                   </button>
                 </div>

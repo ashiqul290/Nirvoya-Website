@@ -4,6 +4,7 @@ import { Home } from './page/Home';
 import Rootlayout from './Layout/Rootlayout';
 import { ProdactFilterInCategory } from './page/ProdactFilterInCategory';
 import { ProductDtails } from './page/ProductDtails';
+import ProductDtailsRes from './components/ProductDetails/Res/ProductDtailsRes';
 
 export const App = () => {
   let router = createBrowserRouter([
@@ -14,7 +15,7 @@ export const App = () => {
       { index: true, Component: Home },
       { path: "product-filters", Component: ProdactFilterInCategory },
       { path: "view-product", Component: ProductDtails },
-     
+           
     ],
   },
 ]);

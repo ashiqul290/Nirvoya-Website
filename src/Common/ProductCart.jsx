@@ -62,7 +62,7 @@ export const ProductCart = ({ item }) => {
         >
           <img src={item?.img} className=" rounded-[10px] w-full" alt="product" />
           {item.discoutprice && (
-            <span className=" absolute top-0 left-0 px-3 py-2 text-[14px] font-semibold font-poppins bg-gradient-to-r from-[#FF7A00] to-[#FFB800] rounded-r rounded-b rounded-tl-[10px] text-white">
+            <span className=" absolute top-0 left-0 px-1 py-1 text-[12px] sm:px-3 sm:py-2 sm:text-[14px] font-semibold font-poppins bg-gradient-to-r from-[#FF7A00] to-[#FFB800] rounded-r rounded-b rounded-tl-[10px] text-white">
               -{item?.discoutprice}% OFF
             </span>
           )}
@@ -93,7 +93,7 @@ export const ProductCart = ({ item }) => {
           </div>
            
         </div>
-            <button onClick={handlebtn} className=" absolute right-2  px-2 py-2 bottom-1 md:bottom-2 cursor-pointer">
+            <button onClick={handlebtn} className=" absolute sm:right-2 right-0  px-2 bottom-0 py-2 sm:bottom-1 md:bottom-2 cursor-pointer">
               {" "}
               <img src={cart} alt="cart" />
             </button>

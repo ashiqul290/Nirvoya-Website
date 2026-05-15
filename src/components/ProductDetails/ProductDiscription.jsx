@@ -4,15 +4,15 @@ export const ProductDiscription = () => {
   return (
     <>
       <div className="bg-white">
-        <h2 className="text-[#0198E9] font-medium font-poppins text-[24px] py-5 bg-[#F1F1F1] pl-12">
+        <h2 className="text-[#0198E9] font-medium font-poppins text-[20px] sm:text-[24px] py-5 bg-[#F1F1F1] md:pl-12 pl-2">
           Producr details of LED Monitor With High Quality In The World
         </h2>
-        <div className="pl-12">
-          <h3 className="text-[#333333] font-bold font-poppins text-[24px] mt-6.25 mb-5">
+        <div className="md:pl-12  lg:px-0">
+          <h3 className="text-[#333333] font-bold font-poppins text-[20px] sm:text-[24px] mt-6.25 mb-5">
             See the best picture no matter where you sit
           </h3>
-          <div className=" flex">
-            <ul className="ml-8 w-2/4">
+          <div className=" md:flex  gap-5">
+            <ul className="ml-8 md:w-2/4">
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Size : M, L, XL</li>
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Product Type : Jogger</li>
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Main Material : Cotton</li>
@@ -20,7 +20,7 @@ export const ProductDiscription = () => {
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Waist : Mid-rise</li>
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Zip : Fly</li>
             </ul>
-            <ul className="ml-8 w-2/4">
+            <ul className="ml-8 mt-4 md:mt-0 md:w-2/4">
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Zipper : Yes</li>
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">Pocket : Two front and One Back Pockets.</li>
               <li className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-1">100% Authentic Product</li>
@@ -33,9 +33,9 @@ export const ProductDiscription = () => {
         </div>
 
         <hr className="text-[#F1F1F1] mt-8.75 mb-6.25"/>
-      <div className="px-12 pb-10">
+      <div className="md:px-12 pb-10">
           <h3 className="text-[#333333] font-bold font-poppins text-[24px]  mb-4.5">Powerful intelligence for perfection</h3>
-        <p  className="text-[#333333] font-normal font-poppins text-[18px] list-disc ">
+        <p  className="text-[#333333] font-normal font-poppins sm:text-[18px] list-disc ">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -50,7 +50,7 @@ export const ProductDiscription = () => {
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur?
         </p>
-        <p  className="text-[#333333] font-normal font-poppins text-[18px] list-disc mt-10">
+        <p  className="text-[#333333] font-normal font-poppins sm:text-[18px] list-disc mt-10">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
           et quas molestias excepturi sint occaecati cupiditate non provident,

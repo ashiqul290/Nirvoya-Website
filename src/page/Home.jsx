@@ -15,7 +15,7 @@ export const Home = () => {
      <BannerRes />
      <Category />
      <FlashDeals />
-    <FeaturedProduct />
+     <FeaturedProduct />
     
     </div>
     
